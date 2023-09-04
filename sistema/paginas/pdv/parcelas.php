@@ -4,7 +4,7 @@ require_once("../../../conexao.php");
 $id_empresa = @$_SESSION['id_empresa'];
 $id_usuario = @$_SESSION['id_usuario'];
 
-//$query = $pdo->query("DELETE FROM contas_receber where id_venda = '-2' and usuario_lanc = '$id_usuario'");
+$query = $pdo->query("DELETE FROM receber where id_parc = '-2' and usuario_lanc = '$id_usuario'");
 
 
 $valor = $_POST['valor'];
@@ -36,7 +36,7 @@ if($parcelas > 1){
 		}
 		
 	
-		$query = $pdo->prepare("INSERT INTO receber set empresa = '$id_empresa', data_lanc = curDate(), data_venc = :data, valor = :valor, usuario_lanc = '$id_usuario', pago = 'Não', id_venda = '-2'");
+		$query = $pdo->prepare("INSERT INTO receber set empresa = '$id_empresa', data_lanc = curDate(), data_venc = :data, valor = :valor, usuario_lanc = '$id_usuario', pago = 'Não', id_parc = '-2'");
 
 		$query->bindValue(":valor", "$novo_valor");
 		$query->bindValue(":data", "$data");
