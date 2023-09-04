@@ -1229,7 +1229,7 @@ $("#form-grade").submit(function () {
         console.log(result);
         
         
-        document.getElementById('total_compra').value = 'R$ ' + totalVendaF; 
+        document.getElementById('total_compra').value = totalVendaF; 
         $('#total-modal-venda').text('R$ ' + totalVendaF);
                
 
